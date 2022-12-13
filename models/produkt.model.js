@@ -1,5 +1,5 @@
-import  Sequelize  from '../config/sequelize.config.js'
-import {database, DatabaseError, DataTypes, Model } from 'sequelize'
+import  sequelize  from '../config/sequelize.config.js'
+import { DataTypes, Model } from 'sequelize'
 
 class productModel extends Model{}
 
@@ -24,7 +24,7 @@ productModel.init({
           allowNull:false
      },
      content:{
-          DataTypes:STRING,
+          type:DataTypes.STRING,
           allowNull: false
      },
      stock: {
@@ -56,7 +56,7 @@ productModel.init({
           allowNull: false
      }
 }, {
-     Sequelize,
+     sequelize,
      modelName: 'product',
      freezetableName: true,
      undersecond: true
