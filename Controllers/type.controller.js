@@ -10,7 +10,7 @@ import TypetModel from '../Models/type.model.js';
 
 // Controller for typets
  
-class typeController {
+class TypeController {
      // class constructor
 
 	constructor() {
@@ -50,5 +50,5 @@ create = async (req, res) => {
 	
        
 
-export default typeController
+export default TypeController
 
