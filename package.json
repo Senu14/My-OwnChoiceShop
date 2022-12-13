@@ -1,0 +1,35 @@
+{
+  "name": "my-ownchoiceshop",
+  "version": "1.0.0",
+  "description": "My projct",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Senu14/My-OwnChoiceShop.git"
+  },
+  "keywords": [
+    "Database",
+    "web",
+    "Shop",
+    "products"
+  ],
+  "author": "Senait Y",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Senu14/My-OwnChoiceShop/issues"
+  },
+  "homepage": "https://github.com/Senu14/My-OwnChoiceShop#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.27.0"
+  }
+}
