@@ -1,9 +1,9 @@
 import GenderModel from '../models/gender.model.js'
-import productModel from '../models/product.model.js'
+import ProductModel from '../models/product.model.js'
 
 
-GenderModel.hasMany(productModel)
-productModel.belongsTo(GenderModel)
+GenderModel.hasMany(ProductModel)
+ProductModel.belongsTo(GenderModel)
 
 
 class GenderController {
@@ -58,10 +58,11 @@ update = async (req, res) => {
         res.sendStatus(418)
     }
 }
-delete = async(req, res) =>{
+delete = async(req, res) => {
     try{
-        await GenderModel.destroy({ id: req.params.id});
-        res.sendStatus(200)
+        console.log(123)
+        const result = await GenderModel.destroy({ where: {id: req.params.id}});
+      res.sendStatus(200)
     }catch(err){
         res.send(err)
     }

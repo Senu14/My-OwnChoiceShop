@@ -41,12 +41,6 @@ productModel.init({
           type:DataTypes.INTEGER,
           allowNull:false
      }, 
-     reviw_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false
-
-          
-     },
      type_id:{
           type: DataTypes.INTEGER,
           allowNull: false
