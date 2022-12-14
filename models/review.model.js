@@ -1,9 +1,9 @@
 import sequelize from '../config/sequelize.config.js'
 import { DataTypes, Model } from 'sequelize'
 
-class reviwModel extends Model{}
+class ReviewModel extends Model{}
 
-reviwModel.init({
+ReviewModel.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -34,11 +34,11 @@ reviwModel.init({
     }
 }, {
     sequelize, 
-    modelName: 'reviw',
+    modelName: 'review',
     freezeTableName: true,
     underscored: true,
 
 })
 
 
-export default reviwModel
+export default ReviewModel

@@ -1,5 +1,5 @@
-import TypetModel from '../Models/type.model.js';
-
+import TypeModel from '../models/type.model.js';
+import ProductModel from '../models/product.model.js';
 
 /**
 	 * Method list - henter alle records
@@ -7,9 +7,10 @@ import TypetModel from '../Models/type.model.js';
 	 * @param {Object} res Express Response Object
 	 */
 
+TypeModel.hasMany(ProductModel)
+ProductModel.belongsTo(TypeModel)
 
 // Controller for typets
- 
 class TypeController {
      // class constructor
 
@@ -28,24 +29,47 @@ list = async (req, res) => {
      })
 		res.json(result)
 	}
-detail = async (req, res) => {
-		     const result = await TypetModel.findAll({
-			where: { id: req.params.id },
-			include: SongModel,
-	});
-		res.json(...result);
-	}
+details = async (req, res) => {
+	const { id } = req.params || 0
+	const result = await TypeModel.findOne({
+	    attributes: ['id', 'type'],
+	    where: { id: id }
+	})
+	res.json(result)
+ }
 create = async (req, res) => {
-	const { id, name } =req.body;
-	if  (id && name) { 
-		const model = await TypetModel.create (req.boody)
-		return res.json({ newId: model.id});
+	const { type } =req.body;
+	if  (type) { 
+		const model = await TypeModel.create (req.body)
+		 res.json({ newId: model.id});
 	}else{
-		res.send(418);
+		res.sendStatus(418);
 
 	}
 
 }
+update = async (req, res) => {
+	const { id } = req.params || 0
+	const { type } = req.body;
+	if(id && type) {
+	    const model = await TypeModel.update(req.body, {
+		   where: { id: id }
+	    })
+	    res.json({
+		   msg: 'Type updated'
+	    })
+	} else {
+	    res.sendStatus(418)
+	}
+ }
+ delete = async (req, res) => {
+	try {
+	    await TypeModel.destroy({ where: { id: req.params.id }});
+	    res.sendStatus(200)
+	} catch(err) {
+	    res.send(err)
+	}
+ }
 };
 	
        

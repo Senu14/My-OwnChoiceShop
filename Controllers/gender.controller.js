@@ -1,4 +1,9 @@
 import GenderModel from '../models/gender.model.js'
+import productModel from '../models/product.model.js'
+
+
+GenderModel.hasMany(productModel)
+productModel.belongsTo(GenderModel)
 
 
 class GenderController {
@@ -10,6 +15,7 @@ list = async (req, res) => {
     let { gender } = req.body
 
     const result = await GenderModel.findAll({
+        attributes: ['id','gender']
 
     })
     res.json(result)
@@ -17,7 +23,7 @@ list = async (req, res) => {
 
 details = async (req, res) => {
     const  { id } = req.params || 0
-    const result = await GenderModel.findAll({
+    const result = await GenderModel.findOne({
         attributes: ['id', 'gender'],
         where: { id: id }
 
@@ -28,7 +34,7 @@ details = async (req, res) => {
 }
 
 create = async (req, res) => {
-    const  { gender } = req.pody;
+    const  { gender } = req.body;
     if(gender) {
          const model = await GenderModel.create (req.body)
          res.json({ newId: model.id })
@@ -36,6 +42,29 @@ create = async (req, res) => {
         res.sendStatus(418)
 
  }
+}
+
+update = async (req, res) => {
+    const { id } = req.params ||0
+    const {gender } = req.body;
+    if (id && gender) { 
+        const model = await GenderModel.update(req.body, {
+           where: { id: id} 
+        })
+        res.json ({ 
+            msg: 'Gender update'
+        })
+    }else{
+        res.sendStatus(418)
+    }
+}
+delete = async(req, res) =>{
+    try{
+        await GenderModel.destroy({ id: req.params.id});
+        res.sendStatus(200)
+    }catch(err){
+        res.send(err)
+    }
 }
 }
   

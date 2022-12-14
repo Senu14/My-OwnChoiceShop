@@ -28,7 +28,7 @@ productModel.init({
           allowNull: false
      },
      stock: {
-          type: DataTypes.BOOLEAN,
+          type: DataTypes.INTEGER,
           allowNull:false
      },
      gender_id: {
@@ -51,8 +51,8 @@ productModel.init({
           type: DataTypes.INTEGER,
           allowNull: false
      }, 
-    size_id:{
-          type: DataTypes.INTEGER,
+    size:{
+          type: DataTypes.STRING,
           allowNull: false
      }
 }, {

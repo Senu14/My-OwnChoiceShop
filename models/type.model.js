@@ -1,9 +1,9 @@
 import sequelize from '../config/sequelize.config.js'
 import { DataTypes, Model } from 'sequelize'
 
-class typeModel extends Model{}
+class TypeModel extends Model{}
 
-typeModel.init({
+TypeModel.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -26,4 +26,4 @@ typeModel.init({
 })
 
 
-export default typeModel
+export default TypeModel

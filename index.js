@@ -5,10 +5,10 @@ import dotenv from 'dotenv'
 import TypeRouter from "./router/type.router.js";
 import InitRouter from "./router/init.router.js";
 import BrandRouter from "./router/brand.router.js";
-// import ProductRouter from "./router/product.router.js"
-// import ReviwRouter from "./router/reviw.router.js"
-import SizeRouter from "./router/size.router.js"
+import ProductRouter from "./router/product.router.js"
+ import ReviewRouter from "./router/review.router.js"
 import GenderRouter from "./router/gender.router.js";
+import UserRouter from "./router/user.router.js";
 
 const app = express();
 app.use (express.urlencoded ({extended: true}))
@@ -29,12 +29,12 @@ app.get('/', ( req, res) => {
 app.use(InitRouter);
 app.use(BrandRouter);
 app.use(GenderRouter);
-// app.use(ReviwRouter);
-app.use(SizeRouter);
+app.use(ProductRouter);
 app.use(TypeRouter);
+app.use(UserRouter);
+ app.use(ReviewRouter);
 
 
-
-app.listen(port, () => {
-     console.log(`Server kører på port http://localhost:${port}`);
-      })
+app.listen(4200, () => {
+console.log(`Server is runing on port http://localhost:${port}`);
+      });
