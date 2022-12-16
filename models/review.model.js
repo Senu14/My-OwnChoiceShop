@@ -11,7 +11,7 @@ ReviewModel.init({
         primaryKey: true
     },
     date: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false
     },
     user_id: {
@@ -27,6 +27,11 @@ ReviewModel.init({
         allowNull: false
     },
    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+
+    }, 
+    product_id: {
         type: DataTypes.INTEGER,
         allowNull: false
     

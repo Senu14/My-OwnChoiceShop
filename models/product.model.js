@@ -48,12 +48,16 @@ productModel.init({
     size:{
           type: DataTypes.STRING,
           allowNull: false
-     }
+     }, 
+      price:{
+      type: DataTypes.STRING,
+          allowNull: false
+ }
 }, {
      sequelize,
      modelName: 'product',
      freezetableName: true,
-     undersecond: true
+     underscored: true
 
 })
 
