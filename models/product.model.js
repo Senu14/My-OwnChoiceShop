@@ -50,8 +50,8 @@ productModel.init({
           allowNull: false
      }, 
       price:{
-      type: DataTypes.STRING,
-          allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false
  }
 }, {
      sequelize,

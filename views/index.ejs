@@ -2,11 +2,20 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <link rel="stylesheet" href="asset/css/style.css">
-<div id="products-container">
 
-
-
-
+<header>
+     <!--Lootie files-->
+ <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+ <lottie-player src="https://lottie.host/9660503e-0cda-425f-b49c-26680f87060a/1fdw07r76j.json" 
+ background="transparent" speed="1" style="width: 105px;  height: 90px; right: 150px; margin-top: 2em;"loop autoplay class="lottie"></lottie-player>
+   
+ <nav>
+     <a href="http://localhost:4200/login" class="header-link">Login</a>
+     <a href="http://localhost:4200/register" class="header-link">Register</a>
+ </nav>
+ 
+ </header>
+ <div id="products-container">
 <script>
      function toBase64(arr) {
    //arr = new Uint8Array(arr) if it's an ArrayBuffer
@@ -15,34 +24,34 @@
    );
 }
     $.get("/product", function(data, status){
- 
  data.forEach(element => {
  
-    
-  
-
     $("#products-container").append(`
     <div class="product">
-     <section class="cards">
+     
      <img src="${element.img}" alt="armani-si-edp-womens" border="0" />
-         <p>${element.name}</p>
-         <p>${element.content}</p>
-    
-
-</section>
-         </div>
+     <div class="cards">
+         <p class="name">${element.name}</p>
+         <p class="content">${element.content}</p>
+         <p class="price">${element.price}</p>
+         <button class="button">Add to Cart</button>
+     </div>
+     </div>
          
-    `
-)
-    
+    ` 
+   ) 
  });
  });
-
-
-
 </script>
-
 </div>
+<!--Footer starts her-->
+<footer>
+     <ul class="down">
+       <li class="down-li">Follow as</li>
+       <li class="down-li"><a href=><img src="asset/img/download.jfif " class="FB"></a></li>
+       <li class="down-li"><a href=><img src="asset/img/download (1).jfif " class="FB"></a></li>
+     </ul>
+   </footer>
 
 
 

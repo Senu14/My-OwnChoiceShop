@@ -1,7 +1,8 @@
 <head>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
-
+<div class="main">
+<figure>
 <h1>login</h1>
 <form action="/login" method ="post">
 
@@ -19,7 +20,8 @@
 </form>
 <a href ="/register">Register</a>
 
-
+</figure>
+</div>
 <script>
 const handelAuthentication = (email, password) => {
      $.post("http://localhost:4200/signin",
