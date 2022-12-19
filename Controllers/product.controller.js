@@ -11,13 +11,20 @@ class ProductController {
         limit = parseInt(limit) || 1000
         const attr = attributes ? attributes.split(',') : new Array
         ('img', 'name', 'content')
-
+     
 
         const result = await ProductModel.findAll({
             attributes: attr,
             limit: limit
         })
+       result.forEach(element =>{
+        let img = new Buffer.from(element.img).toString('utf8')
+        element.img=img
+       })
+    console.log(result);
         res.json(result)
+    
+        
     }
 
 details = async (req, res) => {
