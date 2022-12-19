@@ -9,23 +9,9 @@
     border: 1px solid black; 
     box-sizing: border-box; 
  }
-article{
-    padding: 1em;
-    height: 50%;
-    
- }
- figure{
-    width: 100%;
-    padding: 1em;
-    gap: 1em;
-}
-.cards{
-    flex: 4;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 10px;
-  
-}
+
+
+
 .product {
     width: 170px;
     border-radius: 10px 10px 10px 10px; 
