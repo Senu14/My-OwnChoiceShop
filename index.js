@@ -61,6 +61,6 @@ app.use(UserRouter);
  app.use(AuthRouter);
 
 
-app.listen(4200, () => {
+app.listen(port, () => {
 console.log(`Server is runing on port http://localhost:${port}`);
       });

@@ -7,6 +7,7 @@ ReviewModel.belongsTo(ProductModel)
 
 class ProductController {
     list = async (req, res) => {
+        console.log(1234);
         let { limit, attributes } = req.query
         limit = parseInt(limit) || 1000
         const attr = attributes ? attributes.split(',') : new Array
